@@ -24,7 +24,7 @@ public class WebHibernateConfig {
     public DataSource getDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(Objects.requireNonNull("com.mysql.cj.jdbc.Driver"));
-        dataSource.setUrl("jdbc:mysql://localhost:3306");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/schema_task");
         dataSource.setUsername("root");
         dataSource.setPassword("1023");
         return dataSource;
@@ -38,9 +38,9 @@ public class WebHibernateConfig {
         entityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
 
         Properties properties=new Properties();
-        properties.setProperty("hibernate.dialect","org.hibernate.dialect.MySQL8Dialect");
+        properties.setProperty("hibernate.dialect","org.hibernate.dialect.MySQL5Dialect");
         properties.setProperty("hibernate.show_sql", "true");
-        properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+        properties.setProperty("hibernate.hbm2ddl.auto", "none");
 
         entityManagerFactoryBean.setJpaProperties(properties);
         return entityManagerFactoryBean;
