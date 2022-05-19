@@ -1,7 +1,5 @@
 package web.config;
 
-import org.hibernate.cfg.Environment;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -21,9 +19,6 @@ import java.util.Properties;
 @EnableTransactionManagement
 @ComponentScan("web")
 public class WebHibernateConfig {
-
-//    @Autowired
-//    private Environment env;
 
     @Bean
     public DataSource getDataSource() {

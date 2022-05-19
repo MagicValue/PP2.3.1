@@ -19,7 +19,7 @@ public class UserController {
     }
 
     @GetMapping(value = "/")
-    public String index(Model model){
+    public String index(Model model) {
         List<User> users = userService.index();
         model.addAttribute("users", users);
         return "index";
@@ -32,7 +32,7 @@ public class UserController {
     }
 
     @GetMapping("/new")
-    public String newUser(Model model){
+    public String newUser(Model model) {
         model.addAttribute("user", new User());
         return "new";
     }

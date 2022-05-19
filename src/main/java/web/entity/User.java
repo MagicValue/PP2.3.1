@@ -1,4 +1,5 @@
 package web.entity;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,14 +8,14 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name = "id")
     private int id;
-    @Column(name="name")
+    @Column(name = "name")
     private String name;
-    @Column(name="lastName")
+    @Column(name = "lastName")
     private String lastName;
 
-    @Column(name="age")
+    @Column(name = "age")
     private Long age;
 
     public User(String name, String lastName, Long age) {
@@ -24,7 +25,6 @@ public class User {
     }
 
     public User() {
-
     }
 
     public Long getAge() {
