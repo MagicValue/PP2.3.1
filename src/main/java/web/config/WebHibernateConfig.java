@@ -37,8 +37,8 @@ public class WebHibernateConfig {
         entityManagerFactoryBean.setPackagesToScan("web");
         entityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
 
-        Properties properties=new Properties();
-        properties.setProperty("hibernate.dialect","org.hibernate.dialect.MySQL5Dialect");
+        Properties properties = new Properties();
+        properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
         properties.setProperty("hibernate.show_sql", "true");
         properties.setProperty("hibernate.hbm2ddl.auto", "none");
 
@@ -55,7 +55,7 @@ public class WebHibernateConfig {
     }
 
     @Bean
-    public PersistenceExceptionTranslationPostProcessor exceptionTranslation(){
+    public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
         return new PersistenceExceptionTranslationPostProcessor();
     }
 
